@@ -1,7 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sauromates\TrackIt;
 
-class TrackIt
-{
-}
+final class TrackIt {}

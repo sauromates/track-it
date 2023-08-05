@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sauromates\TrackIt\Facades;
 
 use Illuminate\Support\Facades\Facade;
@@ -7,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Sauromates\TrackIt\TrackIt
  */
-class TrackIt extends Facade
+final class TrackIt extends Facade
 {
     protected static function getFacadeAccessor()
     {
