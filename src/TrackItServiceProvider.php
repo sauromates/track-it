@@ -2,9 +2,9 @@
 
 namespace Sauromates\TrackIt;
 
+use Sauromates\TrackIt\Commands\TrackItCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Sauromates\TrackIt\Commands\TrackItCommand;
 
 class TrackItServiceProvider extends PackageServiceProvider
 {
