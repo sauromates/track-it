@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Sauromates\TrackIt\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class TrackItCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'track-it';
 
     public $description = 'My command';
 
