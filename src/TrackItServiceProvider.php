@@ -4,24 +4,36 @@ declare(strict_types=1);
 
 namespace Sauromates\TrackIt;
 
-use Sauromates\TrackIt\Commands\TrackItCommand;
+use Illuminate\Contracts\Foundation\Application;
+use Spatie\LaravelPackageTools\Exceptions\InvalidPackage;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 final class TrackItServiceProvider extends PackageServiceProvider
 {
+    /**
+     * @throws InvalidPackage
+     */
+    public function register(): void
+    {
+        parent::register();
+
+        $this->app->singleton(
+            abstract: TrackIt::class,
+            concrete: fn (Application $app) => new TrackIt($app),
+        );
+    }
+
+    /**
+     * @link https://github.com/spatie/laravel-package-tools
+     */
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package
             ->name('track-it')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_track-it_table')
-            ->hasCommand(TrackItCommand::class);
+            ->publishesServiceProvider('TrackItServiceProvider')
+            ->hasMigrations('create_issues_table', 'create_trackers_table')
+            ->runsMigrations();
     }
 }
