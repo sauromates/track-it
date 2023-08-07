@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sauromates\TrackIt\Enums;
 
 enum IssueProvider: string

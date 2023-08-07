@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sauromates\TrackIt\Contracts;
 
 interface TimeTrackerInterface

@@ -31,8 +31,6 @@ interface IssueInterface
     /**
      * Links an issue to an assignee. It's possible to provide more flexible assignee argument by using union
      * types like `string|UserInterface|AssigneeInterface $to`.
-     *
-     * @param  string  $to
      */
     public function assign(string $to): self;
 }

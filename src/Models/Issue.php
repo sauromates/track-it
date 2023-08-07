@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sauromates\TrackIt\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,7 +23,7 @@ final class Issue extends Model implements IssueInterface, TrackableInterface
         'due_date',
         'priority',
         'estimate',
-        'hours_spent'
+        'hours_spent',
     ];
 
     protected $attributes = [
